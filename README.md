@@ -54,3 +54,7 @@ CREATE TABLE `outbox` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
+
+## There are multiple ways to implement MRS. Few of them are:
+- Create a job that will run periodically and poll the outbox table for undelivered messages and deliver them in batches.
+- Use CDC (change data capture) tools like Debezium to automatically publish messages whenever data is inserted in the outbox table.
