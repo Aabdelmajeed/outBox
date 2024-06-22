@@ -1,5 +1,4 @@
 ## Building reliable Transactional with outbox pattern in Spring boot.
-##### Ref: https://medium.com/@syedharismasood4/building-reliable-microservices-with-the-transactional-outbox-pattern-in-spring-boot-952d96f8b534
 
 ## Problem Statement
 The Dual Write problem occurs when a piece of code tries to write to two different data sources i.e. a database and a message queue in a single transaction and one of those writes fail leaving the system in an inconsistent state. In order to better understand the problem, let’s consider the following piece of code:
@@ -58,3 +57,5 @@ CREATE TABLE `outbox` (
 ## There are multiple ways to implement MRS. Few of them are:
 - Create a job that will run periodically and poll the outbox table for undelivered messages and deliver them in batches.
 - Use CDC (change data capture) tools like Debezium to automatically publish messages whenever data is inserted in the outbox table.
+
+##### Ref: https://medium.com/@syedharismasood4/building-reliable-microservices-with-the-transactional-outbox-pattern-in-spring-boot-952d96f8b534
